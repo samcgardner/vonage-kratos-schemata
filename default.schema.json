@@ -1,5 +1,5 @@
 {
-  "$id": "TODO",
+  "$id": "https://raw.githubusercontent.com/samcgardner/vonage-kratos-schemata/master/default.schema.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Default Schema",
   "type": "object",
