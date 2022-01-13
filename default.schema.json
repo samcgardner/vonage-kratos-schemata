@@ -1,25 +1,62 @@
 {
   "$id": "https://raw.githubusercontent.com/samcgardner/vonage-kratos-schemata/master/default.schema.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "Default Schema",
+  "title": "Person",
   "type": "object",
   "properties": {
     "traits": {
       "type": "object",
       "properties": {
+        "phone": {
+          "type": "object",
+          "properties": {
+            "number": {
+              "title": "Phone number",
+              "type": "string"
+            },
+            "country": {
+              "title": "Phone country",
+              "type": "string"
+            }
+          }
+        },
         "email": {
-          "title": "e-mail",
           "type": "string",
           "format": "email",
+          "title": "E-Mail",
+          "minLength": 3,
           "ory.sh/kratos": {
             "credentials": {
               "password": {
                 "identifier": true
               }
+            },
+            "verification": {
+              "via": "email"
+            },
+            "recovery": {
+              "via": "email"
+            }
+          }
+        },
+        "name": {
+          "type": "object",
+          "properties": {
+            "first": {
+              "title": "First Name",
+              "type": "string"
+            },
+            "last": {
+              "title": "Last Name",
+              "type": "string"
             }
           }
         }
-      }
+      },
+      "required": [
+        "email"
+      ],
+      "additionalProperties": false
     }
   }
 }
