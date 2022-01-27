@@ -1,5 +1,5 @@
 {
-  "$id": "https://raw.githubusercontent.com/samcgardner/vonage-kratos-schemata/master/default.schema.json",
+  "$id": "https://schemas.ory.sh/presets/kratos/quickstart/email-password/identity.schema.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Person",
   "type": "object",
@@ -7,19 +7,6 @@
     "traits": {
       "type": "object",
       "properties": {
-        "phone": {
-          "type": "object",
-          "properties": {
-            "number": {
-              "title": "Phone number",
-              "type": "string"
-            },
-            "country": {
-              "title": "Phone country",
-              "type": "string"
-            }
-          }
-        },
         "email": {
           "type": "string",
           "format": "email",
@@ -51,6 +38,22 @@
               "type": "string"
             }
           }
+        },
+        "phone": {
+          "type": "object",
+          "properties": {
+            "number": {
+              "title": "Phone number",
+              "type": "string"
+            },
+            "country": {
+              "title": "Phone country",
+              "type": "string"
+            }
+          },
+          "required": [
+            "number"
+          ]
         }
       },
       "required": [
